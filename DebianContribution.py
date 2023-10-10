@@ -27,4 +27,4 @@ if response.status_code == 200:
         print("Content section not found on the page. Please check the page structure.")
 else:
     print("Failed to retrieve the Debian Wiki News page. Status code:", response.status_code)
-#please ensure that the libraries requests a d BeautifulSoup are instlled before running the script
+#please ensure that the libraries requests and BeautifulSoup are instlled before running the script
