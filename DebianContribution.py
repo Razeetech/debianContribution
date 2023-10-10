@@ -13,7 +13,7 @@ if response.status_code == 200:
     soup = BeautifulSoup(response.content, "html.parser")
     
     # Find the content section of the page depending on the page structure)
-    newsContent = soup.find("h2", text="news")
+    newsContent = soup.find("div", {"id": "content"})
     
     if newsContent:
         # Extract the text content and store it in a Markdown file
