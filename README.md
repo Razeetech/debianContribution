@@ -9,6 +9,7 @@ Install the python dependencies with the code
 <ul>
 <li><code>pip install requests beautifulsoup4</code></li>
 
+to Run  use;
 <li><code>python DebianContribution.py</code></li>
 </ul>
 
