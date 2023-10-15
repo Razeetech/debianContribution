@@ -5,15 +5,11 @@ This script wil reads the news page in the Debian wiki, parse the data and write
 
 <h2>How to run</h2>
 
-Install the python libraries
+Install the python dependencies with the code
 <ul>
-<li>install requests for linux <code>pip3 install requests</code>
-for windows <code>pip install requests</code></li>
-
-<li>install beautifulsoup for linux/MacOS <code>sudo pip3 install beautifulsoup4</code>
-for windows <code>pip3 install beautifulsoup4</code>
+<li><code>pip install requests beautifulsoup4</code></li>
 
 <li><code>python DebianContribution.py</code></li>
 </ul>
 
-the news would be save as debianNews.md
+the news would be save as debian_wiki_news.md

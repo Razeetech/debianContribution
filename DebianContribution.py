@@ -1,30 +1,50 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
-# set the tURL of the Debian Wiki News page
-debianNewsUrl = "https://wiki.debian.org/News"
 
-# Send an HTTP GET request to the URL
-response = requests.get(debianNewsUrl)
+# Function to fetch the content of a Debian wiki page
+def fetch_debian_wiki_page(url):
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.text
+    except requests.exceptions.RequestException as e:
+        raise Exception(f"Error fetching Debian wiki page: {str(e)}")
 
-# Check if the request was successful (status code 200)
-if response.status_code == 200:
-    # Parse the HTML content of the news page using BeautifulSoup
-    soup = BeautifulSoup(response.content, "html.parser")
-    
-    # Find the content section of the page depending on the page structure)
-    newsContent = soup.find("div", {"id": "content"})
-    
-    if newsContent:
-        # Extract the text content and store it in a Markdown file
-        with open("debianNews.md", "w", encoding="utf-8") as markdownFile:
-            # Iterate through paragraphs and write them to the Markdown file
-            for paragraph in newsContent.find_all("p"):
-                markdownFile.write(paragraph.get_text() + "\n\n")
-        #the news content would be saved in file named debianNews.md
-        print("Debian News content has been successfully saved to debian_news.md.")
-    else:
-        print("Content section not found on the page. Please check the page structure.")
-else:
-    print("Failed to retrieve the Debian Wiki News page. Status code:", response.status_code)
-#please ensure that the libraries requests and BeautifulSoup are instlled before running the script
+# Function to convert HTML content to Markdown while preserving URLs
+def html_to_markdown_with_urls(html):
+    soup = BeautifulSoup(html, 'html.parser')
+
+    # Handle links and preserve their URLs
+    for a_tag in soup.find_all('a'):
+        url = a_tag.get('href')
+        if url:
+            a_tag.insert_before(f"[{a_tag.text}]({url})")
+            a_tag.decompose()
+
+    # Convert the HTML to plain text
+    markdown_text = re.sub(r'\n+', '\n\n', soup.get_text().strip())
+
+    return markdown_text
+
+# Function to save the Markdown content to a file
+def save_markdown_to_file(markdown_text, filename):
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(markdown_text)
+
+# Main function for the script
+def convert_debian_wiki_to_markdown(wiki_url, output_file):
+    try:
+        wiki_html = fetch_debian_wiki_page(wiki_url)
+        markdown_content = html_to_markdown_with_urls(wiki_html)
+        save_markdown_to_file(markdown_content, output_file)
+        print(f"Debian wiki page converted to {output_file}")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+if __name__ == "__main__":
+    # Example usage:
+    debian_wiki_url = "https://wiki.debian.org/News"
+    output_filename = "debian_wiki_news.md"
+    convert_debian_wiki_to_markdown(debian_wiki_url, output_filename)

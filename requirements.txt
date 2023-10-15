@@ -1,0 +1,7 @@
+beautifulsoup4
+requests
+
+both can be install with
+
+pip install requests beautifulsoup4
+
