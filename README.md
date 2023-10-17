@@ -14,9 +14,9 @@ Install the python dependencies with the code
 <li>Change to the project directory <code>cd DebianContribution</code></li>
   
 <li><h2>To Run the DebianContribution scripts</h2></li>
-if successful, the news would be save as debian_wiki_news.md
   
 <li> use the code <code>python DebianContribution.py</code></li>
+if successful, the news would be save as debian_wiki_news.md
 
 <li><h2>To run the tests </h2></li>
 
