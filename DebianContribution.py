@@ -26,6 +26,14 @@ def html_to_markdown_with_urls(html):
     # Convert the HTML to plain text
     markdown_text = re.sub(r'\n+', '\n\n', soup.get_text().strip())
 
+    # Handle headings and convert them to Markdown
+    for heading in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
+        heading_level = int(heading.name[1])  # Extract the heading level (e.g., 1 from 'h1')
+        heading_text = heading.get_text().strip()
+        markdown_heading = '#' * heading_level + ' ' + heading_text  # Convert to Markdown
+        heading.insert_before(markdown_heading)
+        heading.decompose()
+
     return markdown_text
 
 # Function to save the Markdown content to a file
