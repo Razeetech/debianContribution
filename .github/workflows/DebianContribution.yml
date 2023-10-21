@@ -23,7 +23,7 @@ jobs:
     - name: Run tests
       run: |
         # python -m unittest discover https://github.com/Razeetech/DebianContribution/blob/main/test_DebianCOntribution.py
-        python -m unittest -s discover ././test_DebianCOntribution.py
+        python -m unittest discover ././test_DebianCOntribution.py
 
     - name: Lint code
       run: |
