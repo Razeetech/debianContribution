@@ -6,6 +6,7 @@ This script wil reads the news page in the Debian wiki, parse the data and write
 <h2>How to run</h2>
 
 Install the python dependencies with the code
+
 <ul>
 <li>Python (3.x recommended) installed on your system</li>
 <li>install the dependecies with <code>pip install requests beautifulsoup4</code> or <code>pip install -r requirements.txt</code>
@@ -24,6 +25,7 @@ if successful, the news would be save as debian_wiki_news.md
 </ul>
 
 <h2>Test Cases</h2>
+
 <ol>
 <li>test_fetch_debian_wiki_page_success: Tests the successful fetching of a Debian Wiki page.</li>
 <li>test_fetch_debian_wiki_page_failure: Tests handling the failure when fetching a Debian Wiki page.</li>
