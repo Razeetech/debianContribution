@@ -6,6 +6,10 @@ import re
 import requests
 from bs4 import BeautifulSoup
 
+# for more specific error handling
+class DebianWikiConversionError(Exception):
+    pass
+    
 # Function to fetch the content of a Debian wiki page
 def fetch_debian_wiki_page(url):
     """
@@ -58,8 +62,8 @@ def convert_debian_wiki_to_markdown(wiki_url, OUTPUT_FILENAME):
     try:
         wiki_html = fetch_debian_wiki_page(wiki_url)
         markdown_content = html_to_markdown_with_urls(wiki_html)
-        save_markdown_to_file(markdown_content, OUTPUT_FILENAME)
-        print(f"Debian wiki page converted to {OUTPUT_FILENAME}")
+        save_markdown_to_file(markdown_content, output_filename)
+        print(f"Debian wiki page converted to {output_filename}")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
