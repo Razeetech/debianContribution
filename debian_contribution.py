@@ -66,7 +66,7 @@ def html_to_markdown_with_urls(html):
 
 # Function to save the Markdown content to a file
 def save_markdown_to_file(markdown_text, filename):
-        """
+    """
     Saves the Markdown content to a file.
 
     Args:
@@ -78,7 +78,7 @@ def save_markdown_to_file(markdown_text, filename):
 
 # Main function for the script
 def convert_debian_wiki_to_markdown(wiki_url, output_filename):
-        """
+    """
     Converts a Debian wiki page to Markdown format and saves it to a file.
 
     Args:
