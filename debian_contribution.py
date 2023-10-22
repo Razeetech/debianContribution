@@ -8,6 +8,9 @@ from bs4 import BeautifulSoup
 
 # for more specific error handling
 class DebianWikiConversionError(Exception):
+    """
+    to handle more exceptions
+    """
     pass
 
 # Function to fetch the content of a Debian wiki page
@@ -30,6 +33,15 @@ def fetch_debian_wiki_page(url):
 
 # Function to convert HTML content to Markdown while preserving URLs
 def html_to_markdown_with_urls(html):
+        """
+    Converts HTML content to Markdown format while preserving URLs.
+
+    Args:
+        html (str): The HTML content to convert.
+
+    Returns:
+        str: The Markdown-formatted content.
+    """
     soup = BeautifulSoup(html, 'html.parser')
 
     # Handle links and preserve their URLs
@@ -54,18 +66,32 @@ def html_to_markdown_with_urls(html):
 
 # Function to save the Markdown content to a file
 def save_markdown_to_file(markdown_text, filename):
+        """
+    Saves the Markdown content to a file.
+
+    Args:
+        markdown_text (str): The Markdown content to save.
+        filename (str): The name of the file to save to.
+    """
     with open(filename, 'w', encoding='utf-8') as file:
         file.write(markdown_text)
 
 # Main function for the script
 def convert_debian_wiki_to_markdown(wiki_url, output_filename):
+        """
+    Converts a Debian wiki page to Markdown format and saves it to a file.
+
+    Args:
+        wiki_url (str): The URL of the Debian wiki page.
+        output_filename (str): The name of the output Markdown file.
+    """
     try:
         wiki_html = fetch_debian_wiki_page(wiki_url)
         markdown_content = html_to_markdown_with_urls(wiki_html)
         save_markdown_to_file(markdown_content, output_filename)
         print(f"Debian wiki page converted to {output_filename}")
-    except DebianWikiConversionError as e:
-        print(f"An error occurred: {str(e)}")
+    except DebianWikiConversionError as exception:
+        print(f"An error occurred: {str(exception)}")
 
 if __name__ == "__main__":
     # Example usage:
