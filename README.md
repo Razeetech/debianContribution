@@ -1,5 +1,5 @@
 # debianContribution
-Project for the contribution stage of Outreachy opensource internship 2023
+<h1>Project for the contribution stage of Outreachy opensource internship 2023</h1>
 
 This script will read the news page in the Debian wiki, parse the data and write its content to a file in Markdown
 
