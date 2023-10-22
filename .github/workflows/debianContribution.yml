@@ -26,12 +26,12 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest discover -s . -p 'https://github.com/Razeetech/debianContribution/blob/main/test_debianCOntribution.py'
+        python -m unittest discover -s . -p 'https://github.com/Razeetech/debian_contribution/blob/main/test_debian_contribution.py'
         # Specify the correct directory (-s) and test pattern (-p)
 
     - name: Lint code
       run: |
-        pylint ./debianContribution.py
+        pylint ./debian_contribution.py
 
     env:
       PAT_TOKEN: ${{ secrets.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}}
