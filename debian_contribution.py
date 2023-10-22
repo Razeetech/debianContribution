@@ -1,16 +1,28 @@
+"""
+Converts HTML content from a Debian wiki page to Markdown while preserving URLs.
+"""
+
+import re
 import requests
 from bs4 import BeautifulSoup
-import re
-
 
 # Function to fetch the content of a Debian wiki page
 def fetch_debian_wiki_page(url):
+      """
+    Fetches the content of a Debian wiki page from the given URL.
+    
+    Args:
+        url (str): The URL of the Debian wiki page to fetch.
+    
+    Returns:
+        str: The HTML content of the page.
+    """
     try:
-        response = requests.get(url)
+        response = requests.get(url, timeout=120)
         response.raise_for_status()
         return response.text
-    except requests.exceptions.RequestException as e:
-        raise Exception(f"Error fetching Debian wiki page: {str(e)}")
+    except requests.exceptions.RequestException as exception:
+        raise Exception(f"Error fetching Debian wiki page: {str(exception)}") from exception
 
 # Function to convert HTML content to Markdown while preserving URLs
 def html_to_markdown_with_urls(html):
@@ -42,17 +54,17 @@ def save_markdown_to_file(markdown_text, filename):
         file.write(markdown_text)
 
 # Main function for the script
-def convert_debian_wiki_to_markdown(wiki_url, output_file):
+def convert_debian_wiki_to_markdown(wiki_url, OUTPUT_FILENAME):
     try:
         wiki_html = fetch_debian_wiki_page(wiki_url)
         markdown_content = html_to_markdown_with_urls(wiki_html)
-        save_markdown_to_file(markdown_content, output_file)
-        print(f"Debian wiki page converted to {output_file}")
+        save_markdown_to_file(markdown_content, OUTPUT_FILENAME)
+        print(f"Debian wiki page converted to {OUTPUT_FILENAME}")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
 
 if __name__ == "__main__":
     # Example usage:
-    debian_wiki_url = "https://wiki.debian.org/News"
-    output_filename = "debian_wiki_news.md"
-    convert_debian_wiki_to_markdown(debian_wiki_url, output_filename)
+    DEBIAN_WIKI_URL = "https://wiki.debian.org/News"
+    OUTPUT_FILENAME = "debian_wiki_news.md"
+    convert_debian_wiki_to_markdown(DEBIAN_WIKI_URL, OUTPUT_FILENAME)
