@@ -23,11 +23,11 @@ jobs:
     - name: Run tests
       run: |
         # python -m unittest discover https://github.com/Razeetech/DebianContribution/blob/main/test_DebianCOntribution.py
-        python -m unittest discover ./test_DebianContribution
+        python -m unittest discover ./test_DebianContribution.py
 
     - name: Lint code
       run: |
-        pylint ././DebianContribution.py
+        pylint ./DebianContribution.py
 
         env:
           PAT_TOKEN: ${{ secrets.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}}
