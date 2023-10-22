@@ -1,4 +1,4 @@
-name: DebianContribution CI
+name: debianContribution CI
 
 on: [push]
 
