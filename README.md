@@ -1,4 +1,4 @@
-# DebianContribution
+# debianContribution
 Project for the contribution stage of Outreachy opensource internship 2023
 
 This script wil reads the news page in the Debian wiki, parse the data and write its content to a file in Markdown
@@ -10,17 +10,17 @@ Install the python dependencies with the code
 <li>Python (3.x recommended) installed on your system</li>
 <li>install the dependecies with <code>pip install requests beautifulsoup4</code> or <code>pip install -r requirements.txt</code>
 </li>
-<li>Clone this repository to your local machine <code>git clone https://github.com/Razeetech/DebianContribution.git</code></li>
-<li>Change to the project directory <code>cd DebianContribution</code></li>
+<li>Clone this repository to your local machine <code>git clone https://github.com/Razeetech/debianContribution.git</code></li>
+<li>Change to the project directory <code>cd debianContribution</code></li>
   
-<li><h2>To Run the DebianContribution scripts</h2></li>
+<li><h2>To Run the debianContribution scripts</h2></li>
   
-<li> use the code <code>python DebianContribution.py</code></li>
+<li> use the code <code>python debianContribution.py</code></li>
 if successful, the news would be save as debian_wiki_news.md
 
 <li><h2>To run the tests </h2></li>
 
-<li> use the code <code>python test_DebianContribution.py</code></li>
+<li> use the code <code>python test_debianContribution.py</code></li>
 </ul>
 
 <h2>Test Cases</h2>
