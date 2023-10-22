@@ -20,6 +20,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # Install your project's dependencies
 
+    - name: Install pylint
+      run: |
+        pip install pylint
+
     - name: Run tests
       run: |
         python -m unittest discover -s . -p 'https://github.com/Razeetech/DebianContribution/blob/main/test_DebianCOntribution.py'
