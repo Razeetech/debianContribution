@@ -9,15 +9,15 @@ from bs4 import BeautifulSoup
 # for more specific error handling
 class DebianWikiConversionError(Exception):
     pass
-    
+
 # Function to fetch the content of a Debian wiki page
 def fetch_debian_wiki_page(url):
     """
     Fetches the content of a Debian wiki page from the given URL.
-    
+
     Args:
         url (str): The URL of the Debian wiki page to fetch.
-    
+
     Returns:
         str: The HTML content of the page.
     """
@@ -64,7 +64,7 @@ def convert_debian_wiki_to_markdown(wiki_url, output_filename):
         markdown_content = html_to_markdown_with_urls(wiki_html)
         save_markdown_to_file(markdown_content, output_filename)
         print(f"Debian wiki page converted to {output_filename}")
-    except Exception as e:
+    except DebianWikiConversionError as e:
         print(f"An error occurred: {str(e)}")
 
 if __name__ == "__main__":
