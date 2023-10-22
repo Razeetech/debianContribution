@@ -18,7 +18,7 @@ def fetch_debian_wiki_page(url):
         str: The HTML content of the page.
     """
     try:
-        response = requests.get(url, timeout=120)
+        response = requests.get(url, timeout=20)
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as exception:

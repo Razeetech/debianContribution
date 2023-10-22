@@ -12,7 +12,7 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
         url = "https://wiki.debian.org/News"
         page_content = fetch_debian_wiki_page(url)
 
-        mock_requests_get.assert_called_once_with(url)
+        mock_requests_get.assert_called_once_with(url, timeout=20)
         self.assertEqual(page_content, "<html><body>Mock Wiki Page</body></html>")
 
     @patch('debian_contribution.requests.get')
@@ -41,7 +41,7 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
     def test_convert_debian_wiki_to_markdown(self, mock_save_markdown, mock_html_to_markdown, mock_fetch_page):
         # Mock data
         wiki_url = "https://wiki.debian.org/News"
-        output_file = "mock_output.md"
+        OUTPUT_FILENAME = "mock_output.md"
         wiki_html = "<html><body>Mock Wiki Page</body></html>"
         expected_markdown = "This is a [link](https://example.com) to a website."
 
@@ -49,7 +49,7 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
         mock_html_to_markdown.return_value = expected_markdown
 
         # Run the conversion
-        convert_debian_wiki_to_markdown(wiki_url, output_file)
+        convert_debian_wiki_to_markdown(wiki_url, OUTPUT_FILENAME)
 
         # Check if functions were called with correct arguments
         mock_fetch_page.assert_called_once_with(wiki_url)
