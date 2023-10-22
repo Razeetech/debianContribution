@@ -29,6 +29,7 @@ def fetch_debian_wiki_page(url):
         return response.text
     except requests.exceptions.RequestException as exception:
        # pylint: disable=broad-except
+       # pylint: disable=W0719
         raise Exception(
                 f"Error fetching Debian wiki page: {str(exception)}"
         ) from exception
