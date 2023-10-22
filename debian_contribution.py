@@ -58,7 +58,7 @@ def save_markdown_to_file(markdown_text, filename):
         file.write(markdown_text)
 
 # Main function for the script
-def convert_debian_wiki_to_markdown(wiki_url, OUTPUT_FILENAME):
+def convert_debian_wiki_to_markdown(wiki_url, output_filename):
     try:
         wiki_html = fetch_debian_wiki_page(wiki_url)
         markdown_content = html_to_markdown_with_urls(wiki_html)

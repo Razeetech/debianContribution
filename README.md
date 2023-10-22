@@ -16,12 +16,12 @@ Install the python dependencies with the code
   
 <li><h2>To Run the debianContribution scripts</h2></li>
   
-<li> use the code <code>python debianContribution.py</code></li>
+<li> use the code <code>python debian_contribution.py</code></li>
 if successful, the news would be save as debian_wiki_news.md
 
 <li><h2>To run the tests </h2></li>
 
-<li> use the code <code>python test_debianContribution.py</code></li>
+<li> use the code <code>python test_debian_contribution.py</code></li>
 </ul>
 
 <h2>Test Cases</h2>
