@@ -28,7 +28,9 @@ def fetch_debian_wiki_page(url):
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as exception:
-        raise DebianWikiConversionError(f"Error fetching Debian wiki page: {str(exception)}") from exception
+        raise Exception(
+                f"Error fetching Debian wiki page: {str(exception)}"
+        ) from exception
 
 # Function to convert HTML content to Markdown while preserving URLs
 def html_to_markdown_with_urls(html):
