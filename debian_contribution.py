@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 # Function to fetch the content of a Debian wiki page
 def fetch_debian_wiki_page(url):
-      """
+    """
     Fetches the content of a Debian wiki page from the given URL.
     
     Args:
