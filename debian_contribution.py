@@ -33,7 +33,7 @@ def fetch_debian_wiki_page(url):
 
 # Function to convert HTML content to Markdown while preserving URLs
 def html_to_markdown_with_urls(html):
-        """
+    """
     Converts HTML content to Markdown format while preserving URLs.
 
     Args:
