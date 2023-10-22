@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import patch
-from DebianContribution import fetch_debian_wiki_page, html_to_markdown_with_urls, convert_debian_wiki_to_markdown
+from debianContribution import fetch_debian_wiki_page, html_to_markdown_with_urls, convert_debian_wiki_to_markdown
 
 class TestDebianWikiToMarkdown(unittest.TestCase):
-    @patch('DebianContribution.requests.get')
+    @patch('debianContribution.requests.get')
     def test_fetch_debian_wiki_page_success(self, mock_requests_get):
         mock_response = mock_requests_get.return_value
         mock_response.status_code = 200
@@ -15,7 +15,7 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
         mock_requests_get.assert_called_once_with(url)
         self.assertEqual(page_content, "<html><body>Mock Wiki Page</body></html>")
 
-    @patch('DebianContribution.requests.get')
+    @patch('debianContribution.requests.get')
     def test_fetch_debian_wiki_page_failure(self, mock_requests_get):
         mock_requests_get.side_effect = Exception("Failed to fetch page")
 
@@ -35,9 +35,9 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
 
         self.assertNotEqual(markdown, expected_markdown)
 
-    @patch('DebianContribution.fetch_debian_wiki_page')
-    @patch('DebianContribution.html_to_markdown_with_urls')
-    @patch('DebianContribution.save_markdown_to_file')
+    @patch('debianContribution.fetch_debian_wiki_page')
+    @patch('debianContribution.html_to_markdown_with_urls')
+    @patch('debianContribution.save_markdown_to_file')
     def test_convert_debian_wiki_to_markdown(self, mock_save_markdown, mock_html_to_markdown, mock_fetch_page):
         # Mock data
         wiki_url = "https://wiki.debian.org/News"
