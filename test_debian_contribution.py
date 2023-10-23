@@ -31,7 +31,9 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
         """
         expected_markdown = "This is a [link](https://example.com) to a website.\nAnother [link](https://example.org).\n\nNo link here."
 
-        markdown = html_to_markdown_with_urls(html)
+        base_url = "https://wiki.debian.org/News"
+
+        markdown = html_to_markdown_with_urls(html, base_url)
 
         self.assertNotEqual(markdown, expected_markdown)
 
@@ -53,9 +55,8 @@ class TestDebianWikiToMarkdown(unittest.TestCase):
 
         # Check if functions were called with correct arguments
         mock_fetch_page.assert_called_once_with(wiki_url)
-        mock_html_to_markdown.assert_called_once_with(wiki_html)
+        mock_html_to_markdown.assert_called_once_with(wiki_html, wiki_url)
         mock_save_markdown.assert_called_once_with(expected_markdown, OUTPUT_FILENAME)
 
 if __name__ == '__main__':
     unittest.main()
-
