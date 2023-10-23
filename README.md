@@ -8,6 +8,7 @@ This script will read the news page in the Debian wiki, parse the data and write
 Install the python dependencies with the code
 
 <ul>
+<li>the dependecies includes: beautifulsoup, requests and urllib.parse.urljoin(but you don need to install this, it is part of python standard library</li>
 <li>Python (3.x recommended) installed on your system</li>
 <li>install the dependecies with <code>pip install requests beautifulsoup4</code> or <code>pip install -r requirements.txt</code>
 </li>
