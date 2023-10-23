@@ -53,7 +53,7 @@ def html_to_markdown_with_urls(html, base_url):
         url = a_tag.get('href')
         if url:
             absolute_url = urljoin(base_url, url)  # Convert relative URL to absolute URL
-            a_tag.insert_before(f"[{a_tag.text}]({absolute_url})")  # Update the link with the absolute URL
+            a_tag.insert_before(f"[{a_tag.text}]({absolute_url})")  # Update the link
             a_tag.decompose()
 
     # Convert the HTML to plain text
