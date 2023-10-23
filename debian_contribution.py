@@ -101,4 +101,4 @@ if __name__ == "__main__":
     # Example usage:
     DEBIAN_WIKI_URL = "https://wiki.debian.org/News"
     OUTPUT_FILENAME = "debian_wiki_news.md"
-    convert_debian_wiki_to_markdown(DEBIAN_WIKI_URL, OUTPUT_FILENAME)
+    convert_debian_wiki_to_markdown(DEBIAN_WIKI_URL, OUTPUT_FILENAME) # Call the function
