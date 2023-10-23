@@ -1,20 +1,16 @@
 News - Debian Wiki
 
-[](https://www.debian.org)
+Wiki
 
-[Wiki](/FrontPage)
+Login
 
-[Login](/News?action=login)
-
-[FrontPage](/FrontPage)[RecentChanges](/RecentChanges)[FindPage](/FindPage)[HelpContents](/HelpContents)[News](/News)
+FrontPageRecentChangesFindPageHelpContentsNews
 
 Search:
 
-[](https://www.debian.org)
+Wiki/
 
-[Wiki](/FrontPage)/
-
-[Login](/News?action=login)[Comments](#)[Info](/News?action=info)[Attachments](/News?action=AttachFile)
+LoginCommentsInfoAttachments
 
 More Actions:
 
@@ -60,26 +56,26 @@ Save
 
 SlideShow
 
-[News](/News)
+News
 
-[Translation(s)](/DebianWiki/EditorGuide#translation): [English](/News) - [Español](/es/News) - [فارسی(Persian)](/fa/News) - [Français](/fr/News) - [Italiano](/it/News) - [日本語(Nihongo)](/ja/News) - [한국어](/ko/News) - [Polski](/pl/Wiadomo%C5%9Bci) - [Português (Brasil)](/pt_BR/News) - [Português (Portugal)](/pt_PT/News) - [Русский](/ru/News) - [Svenska](/sv/News) - [Українська](/uk/News) - [tiếng Việt](/vi/News) - [简体中文](/zh_CN/News)  Debian has several news feeds, that can be interesting for different audiences, depending on how they use Debian: 
+Translation(s): English - Español - فارسی(Persian) - Français - Italiano - 日本語(Nihongo) - 한국어 - Polski - Português (Brasil) - Português (Portugal) - Русский - Svenska - Українська - tiếng Việt - 简体中文  Debian has several news feeds, that can be interesting for different audiences, depending on how they use Debian: 
 
 General news
 
-[Latest News](https://www.debian.org/News) - Major news and changes (10-30 per year) [Debian Project News](https://www.debian.org/News/project/) - A newsletter for the Debian community ([contribute](/ProjectNews)) [debian-security-announce](https://www.debian.org/security/#DSAS) - Security advisories about Debian packages  
+Latest News - Major news and changes (10-30 per year) Debian Project News - A newsletter for the Debian community (contribute) debian-security-announce - Security advisories about Debian packages  
 
 News for Debian contributors
 
-#debian-devel IRC channel topic Current issues regarding Debian Project and Debian/[Unstable](/DebianUnstable). 
+#debian-devel IRC channel topic Current issues regarding Debian Project and Debian/Unstable. 
 
-[#debian-devel](ircs://irc.debian.org/#debian-devel) topic is also available at [DevelopersCorner](/DevelopersCorner). debian-devel-announce Announcements for "developers" (like policy changes, important release issues, teams news). 
+#debian-devel topic is also available at DevelopersCorner. debian-devel-announce Announcements for "developers" (like policy changes, important release issues, teams news). 
 
-[debian-devel-announce](https://lists.debian.org/debian-devel-announce) ([contribute](/DeveloperNews)). 
+debian-devel-announce (contribute). 
 
 See also
 
-[debian-infrastructure-announce](https://lists.debian.org/debian-infrastructure-announce/) - Changes in the  Debian infrastructure and services. [Press coverage](/PressCoverage) - Debian in the press [Events](/DebianEvents) and [https://www.debian.org/events/](https://www.debian.org/events/) [https://www.spi-inc.org/](https://www.spi-inc.org/) - News from Software in the Public Interest, a non-profit organization that supports Debian and other software projects  [Community](/Community) 
+debian-infrastructure-announce - Changes in the  Debian infrastructure and services. Press coverage - Debian in the press Events and https://www.debian.org/events/ https://www.spi-inc.org/ - News from Software in the Public Interest, a non-profit organization that supports Debian and other software projects  Community 
 
-News  ([last modified 2022-07-03 11:56:53](/News?action=info))
+News  (last modified 2022-07-03 11:56:53)
 
-Debian [privacy policy](https://www.debian.org/legal/privacy), Wiki [team](/Teams/DebianWiki), [bugs](https://bugs.debian.org/wiki.debian.org) and [config](https://salsa.debian.org/debian/wiki.debian.org).Powered by [MoinMoin](https://moinmo.in/) and [Python](https://moinmo.in/Python), with hosting provided by [Metropolitan Area Network Darmstadt](https://www.man-da.de/).
+Debian privacy policy, Wiki team, bugs and config.Powered by MoinMoin and Python, with hosting provided by Metropolitan Area Network Darmstadt.

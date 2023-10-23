@@ -5,6 +5,7 @@ Converts HTML content from a Debian wiki page to Markdown while preserving URLs.
 import re
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin  # Import urljoin for handling relative URLs
 
 # for more specific error handling
 class DebianWikiConversionError(Exception):
@@ -35,7 +36,7 @@ def fetch_debian_wiki_page(url):
         ) from exception
 
 # Function to convert HTML content to Markdown while preserving URLs
-def html_to_markdown_with_urls(html):
+def html_to_markdown_with_urls(html, base_url):
     """
     Converts HTML content to Markdown format while preserving URLs.
 
@@ -51,8 +52,8 @@ def html_to_markdown_with_urls(html):
     for a_tag in soup.find_all('a'):
         url = a_tag.get('href')
         if url:
-            a_tag.insert_before(f"[{a_tag.text}]({url})")
-            a_tag.decompose()
+            absolute_url = urljoin(base_url, url)  # Convert relative URL to absolute URL
+            a_tag['href'] = absolute_url  # Update the link with the absolute URL
 
     # Convert the HTML to plain text
     markdown_text = re.sub(r'\n+', '\n\n', soup.get_text().strip())
@@ -90,7 +91,7 @@ def convert_debian_wiki_to_markdown(wiki_url, output_filename):
     """
     try:
         wiki_html = fetch_debian_wiki_page(wiki_url)
-        markdown_content = html_to_markdown_with_urls(wiki_html)
+        markdown_content = html_to_markdown_with_urls(wiki_html, wiki_url)
         save_markdown_to_file(markdown_content, output_filename)
         print(f"Debian wiki page converted to {output_filename}")
     except DebianWikiConversionError as exception:
