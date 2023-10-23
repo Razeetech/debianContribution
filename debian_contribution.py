@@ -3,9 +3,9 @@ Converts HTML content from a Debian wiki page to Markdown while preserving URLs.
 """
 
 import re
+from urllib.parse import urljoin  # Import urljoin for handling relative URLs
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin  # Import urljoin for handling relative URLs
 
 # for more specific error handling
 class DebianWikiConversionError(Exception):
