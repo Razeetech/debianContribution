@@ -48,7 +48,7 @@ def html_to_markdown_with_urls(html, base_url):
     """
     soup = BeautifulSoup(html, 'html.parser')
 
-#Handle links and preserve their URLs 
+#Handle links and preserve their URLs
 #as against the previous version where URLs
 #are not been preserved
     for a_tag in soup.find_all('a'):
